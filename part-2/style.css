@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #282828;
+}
+
+.highlight {
+  color: lightcoral;
+}
+
+
+/*-- Accordian --*/
+.accordian-conatiner {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.accordian-conatiner > * {
+  padding: 1vh 20vw;
+}
+
+.accordian-proterty {
+  background-color: #ececec;
+  position: relative;
+}
+
+.accordian-proterty p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5vh 0;
+  overflow: hidden;
+}
+
+p.toggle {
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 5vh;
+  max-height: 10vh;
+  transition: max-height 0.5s ease-in-out;
+}
+
+p.open {
+  max-height: 100vh;
+}
+
+span.btn {
+  width: max-content;
+  padding: 1ch 5ch;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: orange;
+  font-weight: 700;
+  margin: 2vh 0;
+  box-shadow: 4px 4px 0 0 lightcoral;
+  transition: all 0.25s ease;
+}
+
+span.btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0;
+}
+
+.option-list {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: rgba(240, 219, 127, 0.4);
+  box-shadow: 2px 2px 4px 2px lightcoral;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.option:hover {
+  background-color: #ff44008a;
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0;
+}
+
+h2 {
+  margin-top: 3vh;
+  font-size: clamp(1.25rem, 0.9931rem + 1.2844vw, 3rem);
+}
+
+span {
+  font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1.5rem);
+}
+/*-- Accordian --*/
+
+@media screen and (max-width: 768px) {
+  .accordian-conatiner > * {
+    padding: 1vh 10vw;
+  }
+
+  .option-list {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .option-list {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}

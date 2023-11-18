@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quintessential&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #f8ffe5;
+}
+
+.highlight{
+  color: lightgreen;
+}
+
+/*-- Header --*/
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      180deg,
+      rgba(87, 78, 78, 0.5) 10%,
+      rgba(141, 139, 139, 0.1) 90%
+    ),
+    url(images/park-lujiazui-financial-centre.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5vw;
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  max-width: 55%;
+  height: auto;
+  background: rgba(117, 114, 114, 0.3);
+  gap: 2ch;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: max(20px, 2%);
+  width: max(20px, 2%);
+  border-top: 8px solid #343a40;
+  border-left: 8px solid #343a40;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: max(20px, 2%);
+  width: max(20px, 2%);
+  border-bottom: 8px solid #343a40;
+  border-right: 8px solid #343a40;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 1.5596rem + 2.2018vw, 5rem);
+}
+
+.hero p {
+  font-size: clamp(0.95rem, 0.928rem + 0.1101vw, 1.1rem);
+}
+
+#btn {
+  border: none;
+  background-color: #343a40;
+  padding: 1.5vh 3vh;
+  width: max-content;
+  border-radius: 25px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.75rem, 0.7133rem + 0.1835vw, 1rem);
+}
+
+#btn:hover {
+  background-color: #6c757d;
+}
+
+/*-- Header --*/
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .header{
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero {
+    max-width: 100%;
+  }
+}
